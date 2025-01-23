@@ -8,6 +8,7 @@
 	<typeAliases>
 		<!-- guestbookVo를 쓰고 있는데, 여기에 연결을 안 했잖아. 연결하셔 -->
 		<typeAlias alias="guestbookVo" type="himedia.myportal.repositories.vo.GuestbookVo" />
+		<typeAlias alias="UserVo" type="himedia.myportal.repositories.vo.UserVo" />
 	</typeAliases>
 	
 	
@@ -15,6 +16,7 @@
 	<!-- Mapper 등록 -->
 	<mappers>
 		<mapper resource="mybatis/mappers/guestbook.xml" />
+		<mapper resource="mybatis/mappers/user.xml" />
 		<!-- mapper resource="mybatis/mappers/board.xml" />
 		<mapper resource="mybatis/mappers/guestbook.xml" />
 		<mapper resource="mybatis/mappers/user.xml" / -->

@@ -1,16 +1,19 @@
 package himedia.myportal.repositories;
 
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import himedia.myportal.mappers.UserMapper;
 import himedia.myportal.repositories.vo.UserVo;
 
 @Repository
 public class UserDaoImpl implements UserDao {
+//	@Autowired
+//	SqlSession sqlSession;
 	@Autowired
-	SqlSession sqlSession;
+	UserMapper userMapper;
+	
 	
 	@Override
 	public int insert(UserVo vo) {
@@ -19,7 +22,12 @@ public class UserDaoImpl implements UserDao {
 //		} catch (Exception e) {
 //			throw new UserDaoException("회원가입 중 오류", vo);
 //		}
-		return 0;
+		int insertedCount=0;
+		
+		try {
+			
+		}
+		return insertedCount;
 	}
 
 	@Override

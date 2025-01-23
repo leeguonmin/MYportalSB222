@@ -74,6 +74,10 @@ public class UsersController {
 		}
 	}
 	
+	
+	
+	
+	
 	@GetMapping("/login")
 	public String loginForm() {
 		return "users/loginform";
@@ -105,7 +109,11 @@ public class UsersController {
 		}
 	}
 	
-	@ResponseBody
+	
+	
+	
+	
+	@ResponseBody		// 메세지 컴포넌트를 통과시켜라!
 	@GetMapping("/checkEmail")
 	//	JSON API
 	public Object exists(@RequestParam(value="email",
@@ -121,5 +129,6 @@ public class UsersController {
 		
 		return map;
 	}
+	
 
 }

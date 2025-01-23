@@ -1,3 +1,4 @@
+/*
 package himedia.myportal.mappers;
 
 import java.util.List;
@@ -23,3 +24,4 @@ int update(BoardVo vo);
 //<delete id="delete" parameterType="map">
 int delete(Map<String, Integer> map);
 }
+*/

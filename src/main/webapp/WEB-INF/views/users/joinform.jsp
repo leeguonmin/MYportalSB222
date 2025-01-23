@@ -30,9 +30,9 @@
       
       
 	<h1>회원 가입</h1>
-	
+	<!--  <%-- 가입에 통과하지못하면, 백하더라도 기록했던 것들을 보여줘야하니까 이 부분이 필요한거임 (내가 이름, 비밀번호, 이메일 다 썼는데 로그인 실패했다고 다 날아가면 빡치잖아. 뒤로 가더라도 내가 적었던 기록드릉ㄴ 다 살아있고 수정만 할 수 있게 ) --%> -->
 	<form:form
-		modelAttribute="userVo"		<%-- 가입에 통과하지못하면, 백하더라도 기록했던 것들을 보여줘야하니까 이 부분이 필요한거임 (내가 이름, 비밀번호, 이메일 다 썼는데 로그인 실패했다고 다 날아가면 빡치잖아. 뒤로 가더라도 내가 적었던 기록드릉ㄴ 다 살아있고 수정만 할 수 있게 ) --%>
+		modelAttribute="userVo"
 		id="join-form"
 		name="registerForm" 
 		action="${pageContext.servletContext.contextPath }/users/join"

@@ -4,6 +4,7 @@ package himedia.myportal.repositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import himedia.myportal.exception.UserDaoException;
 import himedia.myportal.mappers.UserMapper;
 import himedia.myportal.repositories.vo.UserVo;
 
@@ -22,12 +23,14 @@ public class UserDaoImpl implements UserDao {
 //		} catch (Exception e) {
 //			throw new UserDaoException("회원가입 중 오류", vo);
 //		}
-		int insertedCount=0;
+		int count=0;
 		
 		try {
-			
+			count = userMapper.insert(vo);
+		} catch (Exception e) {
+			throw new UserDaoException("회원가입 중 오류 발생", vo);
 		}
-		return insertedCount;
+		return count;
 	}
 
 	@Override

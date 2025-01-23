@@ -1,6 +1,9 @@
 package himedia.myportal.repositories;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -33,13 +36,20 @@ public class UserDaoImpl implements UserDao {
 		return count;
 	}
 
+	// 중복 체크용 
 	@Override
 	public UserVo selectUser(String email) {
 //		UserVo vo = 
 //				sqlSession.selectOne("user.selectUserByEmail", email);
-		return null;
+		
+		// UserVo 받아와야 하니까
+		UserVo vo = userMapper.selectUserByEmail(email);
+		
+		// 전달받은 vo 객체를 리턴
+		return vo;
 	}
 
+	// 로그인용
 	@Override
 	public UserVo selectUser(String email, String password) {
 //		Map<String, String> userMap 
@@ -50,7 +60,15 @@ public class UserDaoImpl implements UserDao {
 //		UserVo vo = 
 //			sqlSession.selectOne("user.selectUserByEmailAndPassword", 
 //					userMap);
-		return null;
+		
+		Map<String, String> userMap = new HashMap<>();
+		userMap.put("email", email);
+		userMap.put("password", password);
+		
+		UserVo vo = userMapper.selectUserByEmailAndPassword(userMap);
+		return vo;
+		
+		// 얜 잘 모르겠으니까 나중에 꼭 챗지피티한테 물어봐라 
 	}
 
 }

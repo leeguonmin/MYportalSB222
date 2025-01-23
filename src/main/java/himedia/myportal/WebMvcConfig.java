@@ -2,6 +2,7 @@ package himedia.myportal;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import himedia.myportal.interceptors.AuthInterceptor;
@@ -24,7 +25,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		.excludePathPatterns("/board", "/board/", "/board/list");
 		
 	}
-	
+
+	// ** 는 하위 뭐 상관없이......... 실제 위치랑 연결시키는? 모르겠다 무슨 뜻이더라
+	// 정적 자원 매핑!
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/upload-images/**").addResourceLocations("file:/c:/uploads/");
+		
+		
+	}
 	
 	
 	

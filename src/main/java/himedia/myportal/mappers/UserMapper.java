@@ -2,8 +2,11 @@ package himedia.myportal.mappers;
 
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import himedia.myportal.repositories.vo.UserVo;
 
+@Mapper
 public interface UserMapper {
 	
 // <insert id="insert" parameterType="userVo">

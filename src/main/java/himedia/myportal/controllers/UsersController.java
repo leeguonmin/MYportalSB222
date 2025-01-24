@@ -112,7 +112,6 @@ public class UsersController {
 	
 	
 	
-	
 	@ResponseBody		// 메세지 컴포넌트를 통과시켜라!
 	@GetMapping("/checkEmail")
 	//	JSON API
